@@ -7,13 +7,18 @@ def primary():
   quotes = f.readlines()
   f.close()
 
+  f=open("output.txt", "w+")
+
   last = len(quotes) -1
-  rnd = random.randint(0, last)
+  i = 0
 
-  print(last)
+  while i < 2:
+    rnd = random.randint(0, last)
+    print(quotes[rnd], end="")
+    f.write(quotes[rnd])
+    i += 1
+        
 
-  print(quotes[rnd])
-  print(quotes[1])
 
 if __name__== "__main__":
   primary()
